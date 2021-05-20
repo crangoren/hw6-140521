@@ -15,10 +15,10 @@ public class Client {
 
     public static void main(String[] args) {
 
-        Socket socket = null;
+//        Socket socket = null;
 
-        try {
-            socket = new Socket("localhost", 8149);
+        try (Socket socket = new Socket("localhost", 8149)){
+//            socket = new Socket("localhost", 8149);
 
             Scanner in =  new Scanner(socket.getInputStream());
 
@@ -46,19 +46,19 @@ public class Client {
         } catch (IOException ex) {
             ex.printStackTrace();
 
-        } finally {
-
-            try {
-                if (socket != null) {
-                    socket.close();
-
-                }
-
-            } catch (IOException ex) {
-                ex.printStackTrace();
-
-
-            }
+//        } finally {
+//
+//            try {
+//                if (socket != null) {
+//                    socket.close();
+//
+//                }
+//
+//            } catch (IOException ex) {
+//                ex.printStackTrace();
+//
+//
+//            }
         }
 
     }
